@@ -1,11 +1,25 @@
 {
     "name": "kasm-kerbal-os",
     "displayName": "KASM (Kerbal OS)",
-    "description": "",
-    "version": "0.0.1",
+	"author": "Luke Newcomb",
+    "description": "VSCode client for the KASM language server",
+	"license": "GPL-3.0",
+	"publisher": "LukeNewcomb",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/newcomb-luke/kasm-language-server"
+	},
+    "version": "0.3.0",
     "engines": {
         "vscode": "^1.63.0"
     },
+	"keywords": [
+		"KOS",
+		"language-server",
+		"KSP",
+		"KASM",
+		"Kerbal"
+	],
     "categories": [
         "Programming Languages"
     ],
