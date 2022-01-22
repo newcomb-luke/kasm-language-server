@@ -1,0 +1,97 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Kerbal Assembly",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#types"
+		},
+		{
+			"include": "#mnemonics"	
+		},
+		{
+			"include": "#labels"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#identifiers"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.kasm",
+				"match": "(?<!\\w)(\\.section|\\.text|\\.data|\\.define|\\.macro|\\.endmacro|\\.rep|\\.endrep|\\.include|\\.extern|\\.global|\\.local|\\.line|\\.type|\\.value|\\.undef|\\.func|\\.if|\\.ifn|\\.ifdef|\\.ifndef|\\.elif|\\.elifn|\\.elifdef|\\.elifndef|\\.else|\\.endif)(?!\\w)"
+			}]
+		},
+		"labels": {
+			"patterns": [{
+				"name": "variable.parameter.kasm",
+				"match": "(?<!\\w)(\\.?([_a-zA-Z][_a-zA-Z0-9]*):)(?!\\w)"
+			}]
+		},
+		"identifiers": {
+			"patterns": [{
+				"name": "variable.other.kasm",
+				"match": "(?<!\\w)([_a-zA-Z][_a-zA-Z0-9]*)(?!\\w)"
+			}]
+		},
+		"types": {
+			"patterns": [{
+					"name": "support.type.kasm",
+					"match": "(?<!\\w)(\\.b|\\.i8|\\.i16|\\.i32|\\.f64|\\.s|\\.i32v|\\.f64v|\\.bf|\\.sv)(?!\\w)"
+				}]
+		},
+		"mnemonics": {
+			"patterns": [{
+					"name": "keyword.operator.kasm",
+					"match": "(?<!\\w)(eof|eop|nop|sto|uns|gmb|smb|gidx|sidx|bfa|jmp|add|sub|mul|div|pow|cgt|clt|cge|cle|ceq|cne|neg|bool|not|and|or|call|ret|push|pop|dup|swap|eval|addt|rmvt|wait|gmet|stol|stog|bscp|escp|stoe|phdl|btr|exst|argb|targ|tcan|prl|pdrl|lbrt|pushv)(?!\\w)"
+				}]
+		},
+		"constants": {
+			"name": "constant.language.kasm",
+			"match": "(?<!\\w)(true|false|#|\\@)(?!\\w)"
+		},
+		"numbers": {
+			"name": "constant.numeric.kasm",
+			"match": "(?<!\\w)(0x[\\da-f]+|\\d+|\\d+\\.\\d+)(?!\\w)"
+		},
+		"strings": {
+			"name": "string.quoted.double.kasm",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.kasm",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comments": {
+			"patterns": [{
+				"begin": ";",
+				"beginCaptures": {
+					"0": {
+						"name": "punctuation.definition.comment.kasm"
+					}
+				},
+				"end": "\\n",
+				"name": "comment.line.semicolon.kasm"
+			}]
+		}
+	},
+	"scopeName": "source.kasm"
+}
