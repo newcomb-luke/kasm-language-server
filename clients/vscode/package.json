@@ -9,7 +9,8 @@
 		"type": "git",
 		"url": "https://github.com/newcomb-luke/kasm-language-server"
 	},
-    "version": "0.3.0",
+    "version": "0.3.1",
+	"icon": "icons/kasm-logo.png",
     "engines": {
         "vscode": "^1.63.0"
     },
